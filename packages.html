@@ -1,0 +1,1577 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>What we Cater | Kapsimotwa Gardens</title>
+
+    <meta name="description" content="Hidden in gem in the serene Nandi Hills.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-height: 100vh;
+            background: #f7f4ec;
+            color: #173d35;
+            font-family: "Poppins", sans-serif;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        button {
+            font-family: inherit;
+        }
+
+        /* =========================================================
+   MAIN NAVBAR
+   ========================================================= */
+
+        .main-navbar {
+            position: sticky;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            width: 100%;
+            height: 88px;
+            background: #073f38;
+            border-bottom: 1px solid rgba(255, 255, 255, .12);
+        }
+
+        .nav-container {
+            width: min(1380px, 92%);
+            height: 100%;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            flex-shrink: 0;
+            text-decoration: none;
+        }
+
+        .nav-logo img {
+            display: block;
+            width: 145px;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .nav-links {
+            height: 100%;
+            margin-left: auto;
+            margin-right: 45px;
+            display: flex;
+            align-items: center;
+            gap: 38px;
+        }
+
+        .nav-link {
+            position: relative;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: #f7f4ec;
+            text-decoration: none;
+            font-family: "Poppins", sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            white-space: nowrap;
+            transition: color .3s ease;
+        }
+
+        .nav-link::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: 17px;
+            width: 0;
+            height: 2px;
+            background: #c9a34f;
+            transform: translateX(-50%);
+            transition: width .3s ease;
+        }
+
+        .nav-link:hover {
+            color: #d2ae5c;
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 34px;
+        }
+
+        .nav-link.active {
+            color: #d2ae5c;
+        }
+
+        /* =========================================================
+   DROPDOWN
+   ========================================================= */
+
+        .nav-dropdown {
+            position: relative;
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-dropdown-toggle {
+            cursor: pointer;
+        }
+
+        .nav-chevron {
+            display: inline-block;
+            margin-top: -3px;
+            font-size: 13px;
+            transition: transform .3s ease;
+        }
+
+        .nav-dropdown:hover .nav-chevron {
+            transform: rotate(180deg);
+        }
+
+        .nav-dropdown-menu {
+            position: absolute;
+            top: calc(100% - 1px);
+            left: 50%;
+            width: 190px;
+            padding: 10px;
+            background: #073f38;
+            border: 1px solid rgba(201, 163, 79, .35);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, .2);
+            opacity: 0;
+            visibility: hidden;
+            transform: translate(-50%, 10px);
+            transition:
+                opacity .3s ease,
+                transform .3s ease,
+                visibility .3s ease;
+        }
+
+        .nav-dropdown:hover .nav-dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translate(-50%, 0);
+        }
+
+        .nav-dropdown-menu a {
+            display: block;
+            padding: 11px 14px;
+            color: #f7f4ec;
+            text-decoration: none;
+            font-family: "Poppins", sans-serif;
+            font-size: 12px;
+            transition:
+                background .3s ease,
+                color .3s ease;
+        }
+
+        .nav-dropdown-menu a:hover {
+            background: rgba(201, 163, 79, .12);
+            color: #d2ae5c;
+        }
+
+        /* =========================================================
+   BOOK NOW
+   ========================================================= */
+
+        .nav-book-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 108px;
+            height: 43px;
+            padding: 0 20px;
+            border: 1px solid #d0ae5b;
+            border-radius: 6px;
+            color: #f7f4ec;
+            text-decoration: none;
+            font-family: "Poppins", sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: .3px;
+            transition:
+                background .3s ease,
+                color .3s ease,
+                transform .3s ease;
+        }
+
+        .nav-book-btn:hover {
+            background: #d0ae5b;
+            color: #073f38;
+            transform: translateY(-2px);
+        }
+
+        /* =========================================================
+   MOBILE MENU BUTTON
+   ========================================================= */
+
+        .nav-menu-btn {
+            display: none;
+            width: 42px;
+            height: 42px;
+            padding: 0;
+            border: 1px solid rgba(208, 174, 91, .7);
+            border-radius: 5px;
+            background: transparent;
+            cursor: pointer;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        .nav-menu-btn span {
+            display: block;
+            width: 19px;
+            height: 2px;
+            background: #d0ae5b;
+            transition:
+                transform .3s ease,
+                opacity .3s ease;
+        }
+
+        .nav-menu-btn.active span:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
+
+        .nav-menu-btn.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .nav-menu-btn.active span:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
+        }
+
+        /* =========================================================
+   MOBILE NAVBAR — MATCHES INDEX.HTML
+   ========================================================= */
+
+        @media(max-width:900px) {
+
+            .main-navbar {
+                height: 76px;
+            }
+
+            .nav-container {
+                width: 90%;
+                height: 100%;
+            }
+
+            .nav-logo {
+                display: flex;
+                align-items: center;
+                height: 100%;
+                flex-shrink: 0;
+            }
+
+            .nav-logo img {
+                display: block;
+                width: 150px;
+                height: auto;
+                object-fit: contain;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 76px;
+                left: 0;
+                width: 100%;
+                height: auto;
+                margin: 0;
+                padding: 20px 6%;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0;
+                background: #073f38;
+                border-top: 1px solid rgba(255, 255, 255, .1);
+                box-shadow: 0 15px 30px rgba(0, 0, 0, .18);
+
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(-15px);
+
+                transition:
+                    opacity .3s ease,
+                    transform .3s ease,
+                    visibility .3s ease;
+            }
+
+            .nav-links.open {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+            }
+
+            .nav-link {
+                width: 100%;
+                height: 50px;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+            }
+
+            .nav-link::after {
+                display: none;
+            }
+
+            .nav-dropdown {
+                width: 100%;
+                height: auto;
+                display: block;
+            }
+
+            .nav-dropdown-toggle {
+                width: 100%;
+                height: 50px;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+            }
+
+            .nav-dropdown-menu {
+                position: static;
+                width: 100%;
+                max-height: 0;
+                margin: 0;
+                padding: 0;
+
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+
+                overflow: hidden;
+
+                background: transparent;
+                border: 0;
+                box-shadow: none;
+
+                opacity: 0;
+                visibility: hidden;
+                pointer-events: none;
+
+                transform: translateY(-6px);
+
+                transition:
+                    max-height .38s cubic-bezier(.22, 1, .36, 1),
+                    padding .38s cubic-bezier(.22, 1, .36, 1),
+                    opacity .22s ease,
+                    transform .38s cubic-bezier(.22, 1, .36, 1),
+                    visibility .38s ease;
+            }
+
+            .nav-dropdown.open .nav-dropdown-menu {
+                max-height: 350px;
+                padding: 8px 0 12px;
+
+                opacity: 1;
+                visibility: visible;
+                pointer-events: auto;
+
+                transform: translateY(0);
+            }
+
+            .nav-dropdown.open .nav-chevron {
+                transform: rotate(180deg);
+            }
+
+            .nav-dropdown-menu a {
+                width: 100%;
+                min-height: 42px;
+                padding: 9px 18px;
+
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+
+                color: rgba(247, 244, 236, .8);
+
+                font-family: "Poppins", sans-serif;
+                font-size: 13px;
+                font-weight: 500;
+                line-height: 1.4;
+
+                text-decoration: none;
+            }
+
+            .nav-dropdown-menu a::after {
+                display: none;
+            }
+
+            .nav-dropdown-menu a:hover {
+                background: transparent;
+                color: #d2ae5c;
+            }
+
+            .nav-book-btn {
+                display: none;
+            }
+
+            .nav-menu-btn {
+                display: flex;
+            }
+
+        }
+
+        @media(max-width:480px) {
+
+            .main-navbar {
+                height: 70px;
+            }
+
+            .nav-links {
+                top: 70px;
+            }
+
+            .nav-logo img {
+                width: 140px;
+            }
+
+            .nav-menu-btn {
+                width: 39px;
+                height: 39px;
+            }
+
+        }
+
+        /* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+        @media(max-width:480px) {
+
+            .main-navbar {
+                height: 70px;
+            }
+
+            .nav-links {
+                top: 70px;
+            }
+
+            .nav-logo-text {
+                font-size: 24px;
+            }
+
+            .nav-menu-btn {
+                width: 39px;
+                height: 39px;
+            }
+        }
+
+        /* =========================================================
+       PAGE HEADER
+       ========================================================= */
+
+        .gallery-hero {
+            position: relative;
+            width: 100%;
+            min-height: 380px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 80px 20px;
+            overflow: hidden;
+            background: #173d35;
+        }
+
+        .gallery-hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 20% 30%,
+                    rgba(255, 255, 255, .06),
+                    transparent 30%),
+                radial-gradient(circle at 80% 70%,
+                    rgba(185, 151, 69, .10),
+                    transparent 35%);
+            pointer-events: none;
+        }
+
+        .gallery-hero-content {
+            position: relative;
+            z-index: 2;
+            width: min(850px, 90%);
+        }
+
+        .gallery-eyebrow {
+            display: block;
+            margin-bottom: 16px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 4px;
+            color: #d2b15e;
+        }
+
+        .gallery-page-title {
+            margin: 0;
+            font-size: clamp(48px, 7vw, 82px);
+            line-height: .95;
+            font-weight: 900;
+            letter-spacing: -3px;
+            text-transform: uppercase;
+            color: #fff;
+        }
+
+        .gallery-page-subtitle {
+            margin: 18px 0 12px;
+            font-family: "Cormorant Garamond", serif;
+            font-size: 38px;
+            line-height: 1;
+            font-style: italic;
+            font-weight: 600;
+            color: #d2b15e;
+        }
+
+        .gallery-page-description {
+            width: min(600px, 100%);
+            margin: 0 auto;
+            font-size: 13px;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, .82);
+        }
+
+        /* =========================================================
+       GALLERY CONTENT
+       ========================================================= */
+
+        .gallery-main {
+            width: 100%;
+            padding: 90px 0 110px;
+            background: #f7f4ec;
+        }
+
+        .gallery-intro {
+            width: min(850px, 90%);
+            margin: 0 auto 50px;
+            text-align: center;
+        }
+
+        .gallery-intro-label {
+            display: block;
+            margin-bottom: 12px;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            color: #b99745;
+        }
+
+        .gallery-intro-title {
+            margin: 0;
+            font-size: clamp(35px, 4vw, 54px);
+            line-height: 1;
+            font-weight: 800;
+            letter-spacing: -1.5px;
+            text-transform: uppercase;
+            color: #173d35;
+        }
+
+        .gallery-intro-subtitle {
+            margin: 12px 0 0;
+            font-family: "Cormorant Garamond", serif;
+            font-size: 32px;
+            font-style: italic;
+            font-weight: 600;
+            color: #b99745;
+        }
+
+        /* =========================================================
+       GALLERY GRID
+       ========================================================= */
+
+        .gallery-grid {
+            width: min(1250px, 92%);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1.25fr 1fr;
+            grid-template-rows: 300px 300px 300px;
+            gap: 18px;
+        }
+
+        .gallery-card {
+            position: relative;
+            min-width: 0;
+            min-height: 0;
+            overflow: hidden;
+            border-radius: 10px;
+            background: #dedbd2;
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(23, 61, 53, .08);
+        }
+
+        .gallery-card:nth-child(1) {
+            grid-column: 1;
+            grid-row: 1;
+        }
+
+        .gallery-card:nth-child(2) {
+            grid-column: 2;
+            grid-row: 1 / span 2;
+        }
+
+        .gallery-card:nth-child(3) {
+            grid-column: 3;
+            grid-row: 1;
+        }
+
+        .gallery-card:nth-child(4) {
+            grid-column: 1;
+            grid-row: 2;
+        }
+
+        .gallery-card:nth-child(5) {
+            grid-column: 3;
+            grid-row: 2;
+        }
+
+        .gallery-card:nth-child(6) {
+            grid-column: 1;
+            grid-row: 3;
+        }
+
+        .gallery-card:nth-child(7) {
+            grid-column: 2;
+            grid-row: 3;
+        }
+
+        .gallery-card:nth-child(8) {
+            grid-column: 3;
+            grid-row: 3;
+        }
+
+        .gallery-card:nth-child(9) {
+            grid-column: 1 / span 2;
+            grid-row: 4;
+        }
+
+        .gallery-card:nth-child(10) {
+            grid-column: 3;
+            grid-row: 4;
+        }
+
+        .gallery-card img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+            transition:
+                transform .8s cubic-bezier(.22, 1, .36, 1);
+        }
+
+        .gallery-card:hover img {
+            transform: scale(1.06);
+        }
+
+        .gallery-card::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top,
+                    rgba(0, 0, 0, .70) 0%,
+                    rgba(0, 0, 0, .18) 45%,
+                    transparent 72%);
+            pointer-events: none;
+        }
+
+        .gallery-card-content {
+            position: absolute;
+            left: 24px;
+            right: 20px;
+            bottom: 22px;
+            z-index: 2;
+        }
+
+        .gallery-card-number {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 8px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            color: #d8b764;
+        }
+
+        .gallery-card-title {
+            margin: 0;
+            font-family: "Cormorant Garamond", serif;
+            font-size: 32px;
+            line-height: 1;
+            font-style: italic;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        /* =========================================================
+       GALLERY FOOTER BUTTON
+       ========================================================= */
+
+        .gallery-back-wrap {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        .gallery-back-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            padding: 13px 25px;
+            border: 1px solid #173d35;
+            border-radius: 30px;
+            background: #173d35;
+            color: #fff;
+            font-size: 11px;
+            font-weight: 600;
+            transition:
+                background .3s ease,
+                border-color .3s ease,
+                transform .3s ease;
+        }
+
+        .gallery-back-btn:hover {
+            background: #b99745;
+            border-color: #b99745;
+            transform: translateY(-2px);
+        }
+
+        /* =========================================================
+       WHATSAPP
+       ========================================================= */
+
+        .gallery-whatsapp {
+            position: fixed;
+            right: 24px;
+            bottom: 24px;
+            z-index: 900;
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #25d366;
+            color: #fff;
+            font-size: 25px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, .20);
+            transition:
+                transform .3s ease,
+                box-shadow .3s ease;
+        }
+
+        .gallery-whatsapp:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, .25);
+        }
+
+        /* =========================================================
+       FOOTER
+       ========================================================= */
+
+        .gallery-footer {
+            background: #173d35;
+            color: #fff;
+            padding: 70px 0 25px;
+        }
+
+        .gallery-footer-container {
+            width: min(1150px, 90%);
+            margin: 0 auto;
+        }
+
+        .gallery-footer-top {
+            display: grid;
+            grid-template-columns: 1.3fr .7fr 1fr;
+            gap: 70px;
+        }
+
+        .gallery-footer-about h2 {
+            margin-bottom: 16px;
+            font-family: "Cormorant Garamond", serif;
+            font-size: 34px;
+            font-weight: 600;
+        }
+
+        .gallery-footer-about p {
+            max-width: 450px;
+            font-size: 12px;
+            line-height: 1.9;
+            color: rgba(255, 255, 255, .75);
+        }
+
+        .gallery-footer h3 {
+            margin-bottom: 18px;
+            font-family: "Cormorant Garamond", serif;
+            font-size: 25px;
+            font-weight: 600;
+        }
+
+        .gallery-footer-links ul {
+            list-style: none;
+        }
+
+        .gallery-footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .gallery-footer-links a {
+            font-size: 12px;
+            color: rgba(255, 255, 255, .75);
+            transition: color .3s ease;
+        }
+
+        .gallery-footer-links a:hover {
+            color: #d2b15e;
+        }
+
+        .gallery-footer-contact p {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 13px;
+            font-size: 12px;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, .75);
+        }
+
+        .gallery-footer-contact i {
+            width: 16px;
+            margin-top: 3px;
+            color: #d2b15e;
+        }
+
+        .gallery-footer-social {
+            margin-top: 55px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, .12);
+            text-align: center;
+        }
+
+        .gallery-footer-social h3 {
+            margin-bottom: 18px;
+        }
+
+        .gallery-social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+        }
+
+        .gallery-social-icons a {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, .08);
+            color: #fff;
+            transition:
+                background .3s ease,
+                transform .3s ease;
+        }
+
+        .gallery-social-icons a:hover {
+            background: #b99745;
+            transform: translateY(-3px);
+        }
+
+        .gallery-footer-bottom {
+            margin-top: 35px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, .12);
+            text-align: center;
+        }
+
+        .gallery-footer-bottom p {
+            font-size: 10px;
+            color: rgba(255, 255, 255, .55);
+        }
+
+        /* =========================================================
+       TABLET
+       ========================================================= */
+
+        @media(max-width:900px) {
+
+            .gallery-navbar {
+                height: 74px;
+                padding: 0 5%;
+            }
+
+            .gallery-nav-links {
+                display: none;
+            }
+
+            .gallery-hamburger {
+                display: flex;
+            }
+
+            .gallery-mobile-menu {
+                top: 74px;
+                height: calc(100vh - 74px);
+            }
+
+            .gallery-hero {
+                min-height: 340px;
+                padding: 70px 20px;
+            }
+
+            .gallery-page-title {
+                font-size: 58px;
+                letter-spacing: -2px;
+            }
+
+            .gallery-page-subtitle {
+                font-size: 32px;
+            }
+
+            .gallery-grid {
+                width: 92%;
+                grid-template-columns: 1fr 1.15fr;
+                grid-template-rows: 280px 280px 280px 280px 280px;
+                gap: 15px;
+            }
+
+            .gallery-card:nth-child(1) {
+                grid-column: 1;
+                grid-row: 1;
+            }
+
+            .gallery-card:nth-child(2) {
+                grid-column: 2;
+                grid-row: 1 / span 2;
+            }
+
+            .gallery-card:nth-child(3) {
+                grid-column: 1;
+                grid-row: 2;
+            }
+
+            .gallery-card:nth-child(4) {
+                grid-column: 1;
+                grid-row: 3;
+            }
+
+            .gallery-card:nth-child(5) {
+                grid-column: 2;
+                grid-row: 3;
+            }
+
+            .gallery-card:nth-child(6) {
+                grid-column: 1;
+                grid-row: 4;
+            }
+
+            .gallery-card:nth-child(7) {
+                grid-column: 2;
+                grid-row: 4;
+            }
+
+            .gallery-card:nth-child(8) {
+                grid-column: 1;
+                grid-row: 5;
+            }
+
+            .gallery-card:nth-child(9) {
+                grid-column: 2;
+                grid-row: 5;
+            }
+
+            .gallery-card:nth-child(10) {
+                grid-column: 1 / span 2;
+                grid-row: 6;
+            }
+
+            .gallery-footer-top {
+                grid-template-columns: 1fr 1fr;
+                gap: 45px;
+            }
+
+            .gallery-footer-about {
+                grid-column: 1 / span 2;
+            }
+        }
+
+        /* =========================================================
+       MOBILE
+       ========================================================= */
+
+        @media(max-width:600px) {
+
+            .gallery-navbar {
+                height: 70px;
+            }
+
+            .gallery-logo {
+                font-size: 27px;
+            }
+
+            .gallery-mobile-menu {
+                top: 70px;
+                height: calc(100vh - 70px);
+            }
+
+            .gallery-hero {
+                min-height: 310px;
+                padding: 60px 20px;
+            }
+
+            .gallery-eyebrow {
+                font-size: 9px;
+                letter-spacing: 3px;
+            }
+
+            .gallery-page-title {
+                font-size: 42px;
+                line-height: .98;
+                letter-spacing: -1px;
+            }
+
+            .gallery-page-subtitle {
+                margin-top: 14px;
+                font-size: 28px;
+            }
+
+            .gallery-page-description {
+                font-size: 11px;
+                line-height: 1.7;
+            }
+
+            .gallery-main {
+                padding: 65px 0 75px;
+            }
+
+            .gallery-intro {
+                width: 90%;
+                margin-bottom: 35px;
+            }
+
+            .gallery-intro-label {
+                font-size: 8px;
+                letter-spacing: 2.5px;
+            }
+
+            .gallery-intro-title {
+                font-size: 34px;
+                letter-spacing: -1px;
+            }
+
+            .gallery-intro-subtitle {
+                font-size: 27px;
+            }
+
+            /*
+       * Mobile gallery:
+       * two columns with a larger featured image
+       */
+
+            .gallery-grid {
+                width: 92%;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 220px 300px 220px 220px 300px 220px;
+                gap: 10px;
+            }
+
+            .gallery-card:nth-child(1) {
+                grid-column: 1;
+                grid-row: 1;
+            }
+
+            .gallery-card:nth-child(2) {
+                grid-column: 2;
+                grid-row: 1 / span 2;
+            }
+
+            .gallery-card:nth-child(3) {
+                grid-column: 1;
+                grid-row: 2;
+            }
+
+            .gallery-card:nth-child(4) {
+                grid-column: 1;
+                grid-row: 3;
+            }
+
+            .gallery-card:nth-child(5) {
+                grid-column: 2;
+                grid-row: 3;
+            }
+
+            .gallery-card:nth-child(6) {
+                grid-column: 1 / span 2;
+                grid-row: 4;
+            }
+
+            .gallery-card:nth-child(7) {
+                grid-column: 1;
+                grid-row: 5;
+            }
+
+            .gallery-card:nth-child(8) {
+                grid-column: 2;
+                grid-row: 5;
+            }
+
+            .gallery-card:nth-child(9) {
+                grid-column: 1;
+                grid-row: 6;
+            }
+
+            .gallery-card:nth-child(10) {
+                grid-column: 2;
+                grid-row: 6;
+            }
+
+            .gallery-card {
+                border-radius: 7px;
+            }
+
+            .gallery-card-content {
+                left: 15px;
+                right: 12px;
+                bottom: 15px;
+            }
+
+            .gallery-card-number {
+                margin-bottom: 4px;
+                font-size: 7px;
+                letter-spacing: 2px;
+            }
+
+            .gallery-card-title {
+                font-size: 25px;
+            }
+
+            .gallery-whatsapp {
+                right: 18px;
+                bottom: 18px;
+                width: 48px;
+                height: 48px;
+                font-size: 22px;
+            }
+
+            .gallery-footer {
+                padding: 60px 0 22px;
+            }
+
+            .gallery-footer-top {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .gallery-footer-about {
+                grid-column: auto;
+            }
+
+            .gallery-footer-about h2 {
+                font-size: 30px;
+            }
+
+            .gallery-footer-social {
+                margin-top: 40px;
+            }
+        }
+
+        /* =========================================================
+       SMALL MOBILE
+       ========================================================= */
+
+        @media(max-width:400px) {
+
+            .gallery-page-title {
+                font-size: 37px;
+            }
+
+            .gallery-page-subtitle {
+                font-size: 25px;
+            }
+
+            .gallery-intro-title {
+                font-size: 30px;
+            }
+
+            .gallery-grid {
+                grid-template-rows: 200px 270px 200px 200px 270px 200px;
+            }
+
+            .gallery-card-title {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================================================
+     MAIN NAVBAR
+     ========================================================= -->
+
+    <!-- ================= NAVBAR ================= -->
+    <nav class="main-navbar" id="mainNavbar">
+        <div class="nav-container">
+
+            <a href="index.html" class="nav-logo">
+                <img src="images/marameg-log.png" alt="Kapsimotwa Gardens">
+            </a>
+
+            <div class="nav-links" id="navLinks">
+
+                <a href="index.html" class="nav-link">Home</a>
+
+                <div class="nav-dropdown" id="navDropdown">
+                    <a href="packages.html" class="nav-link nav-dropdown-toggle active">
+                        We Cater For
+                        <span class="nav-chevron">⌄</span>
+                    </a>
+
+                    <div class="nav-dropdown-menu">
+                        <a href="packages.html">Weddings</a>
+                        <a href="packages.html">Pre-Weddings</a>
+                        <a href="packages.html">Birthday Parties</a>
+                        <a href="packages.html">Conference Meetings</a>
+                        <a href="packages.html">Family Events</a>
+                        <a href="packages.html">& More</a>
+                    </div>
+                </div>
+
+                <a href="about.html" class="nav-link">Our Story</a>
+
+                <a href="index.html#experience" class="nav-link">Experience</a>
+                <a href="gallery.html" class="nav-link">Gallery</a>
+                <a href="contact.html" class="nav-link">Contact Us</a>
+
+            </div>
+
+            <a href="https://wa.me/254726666365?text=Hello%20I'm%20from%20Kapsimotwa%20Gardens%20website,%20I%20would%20like%20to%20book%20a%20spot."
+                target="_blank" rel="noopener noreferrer" class="nav-book-btn">
+                BOOK NOW
+            </a>
+
+            <button class="nav-menu-btn" id="navMenuBtn" type="button" aria-label="Open navigation menu"
+                aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+        </div>
+    </nav>
+    <!-- =======================================================
+       GALLERY HERO
+       ======================================================= -->
+
+    <header class="gallery-hero">
+
+        <div class="gallery-hero-content">
+
+            <span class="gallery-eyebrow">
+                MaraMega Events
+            </span>
+
+            <h1 class="gallery-page-title">
+                What we Cater For
+            </h1>
+
+
+
+        </div>
+
+    </header>
+
+
+     <!-- =========================================================
+     ROOMS SECTION
+     ========================================================= -->
+
+  <section id="stay" class="rooms-section">
+
+    <div class="rooms-content">
+
+      <div class="rooms-text">
+
+        <h3>
+            MaraMega Events - Outside Catering
+        </h3>
+
+        <p>
+          From Small gatherings to grand celebrations, we bring exceptional food and professional services to 
+          your event:
+          <br>
+          - Weddings
+          <br>
+          - Pre-weddings
+          <br>
+          - Birthday Parties
+          <br>
+          - Conference Meetings
+          <br>
+          - Family Gatherings
+          <br>
+          & More!  
+
+        </p>
+
+        <a href="https://wa.me/254726666365?text=Hello%20I'm%20from%20Kapsimotwa%20Gardens%20website,%20I%20would%20like%20to%20book%20a%20spot."
+          class="rooms-book-btn">
+          Book Now
+        </a>
+
+      </div>
+
+      <div class="rooms-image">
+        <img src="images/marameg.jpg" alt="Rooms at Kapsimotwa Gardens">
+      </div>
+
+    </div>
+
+  </section>
+
+    <!-- =======================================================
+       FOOTER
+       ======================================================= -->
+
+    <footer class="gallery-footer">
+
+        <div class="gallery-footer-container">
+
+            <div class="gallery-footer-top">
+
+                <div class="gallery-footer-about">
+
+                    <h2>Kapsimotwa Gardens</h2>
+
+                    <p>
+                        Escape into Nature.
+                        Let us know your dates of travel, preferred destinations, and number of guests, we'll sort the
+                        rest!
+                    </p>
+
+                </div>
+
+                <div class="gallery-footer-links">
+
+                    <h3>Quick Links</h3>
+
+                    <ul>
+                        <li><a href="index.html#hero">Home</a></li>
+                        <li><a href="about.html">About Kapsimotwa Gardens</a></li>
+                        <li><a href="index.html#experience">Experience</a></li>
+                        <li><a href="packages.html">What we Offer</a></li>
+                        <li><a href="gallery.html">Our Gallery</a></li>
+                        <li><a href="index.html#contact">Contact Us</a></li>
+                    </ul>
+
+                </div>
+
+                <div class="gallery-footer-contact">
+
+                    <h3>Contact</h3>
+
+                    <p>
+                        <i class="fas fa-location-dot"></i>
+                        <span>342X+4P Nandi Hills</span>
+                    </p>
+
+                    <p>
+                        <i class="fas fa-phone"></i>
+                        <span>0726-666-365</span>
+                    </p>
+
+                    <p>
+                        <i class="fas fa-envelope"></i>
+                        <span>kapsimotwagarden@gmail.com</span>
+                    </p>
+
+
+
+                </div>
+
+
+            </div>
+
+            <div class="gallery-footer-social">
+
+                <h3>Follow Our Socials</h3>
+        
+                <div class="gallery-social-icons">
+        
+                  <a href="https://www.facebook.com/Kapsimotwagarden/" target="_blank" rel="noopener noreferrer"
+                    aria-label="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                  </a>
+        
+                  <a href="https://www.instagram.com/kapsimotwagardens/" target="_blank"
+                    rel="noopener noreferrer" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                  </a>
+        
+                  <a href="https://wa.me/254726666365?text=Hello%20I'm%20from%20Kapsimotwa%20Gardens%20website,%20I%20would%20like%20to%20book%20a%20spot." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                  </a>
+        
+                </div>
+        
+              </div>
+
+            <div class="gallery-footer-bottom">
+
+                <p>
+                    ©2026 Kapsimotwa Gardens | Developed by Eyern
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+    <!-- FLOATING ACTIONS -->
+    <div class="fl-a">
+        <a href="tel:+254726666365" class="flb cl" title="Call 0726-666-365">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2">
+                <path
+                    d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.43 10.34 19.79 19.79 0 01.36 1.75 2 2 0 012.34 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 8.1a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
+            </svg>
+        </a>
+        <a href="https://wa.me/254726666365?text=Hello%20I'm%20from%20Kapsimotwa%20Gardens%20website,%20I%20would%20like%20to%20book%20a%20spot."
+            target="_blank" class="flb wa" title="WhatsApp 0726-666-365">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="#fff">
+                <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+                <path
+                    d="M11.999 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.868-1.426A9.945 9.945 0 0012 22c5.523 0 10-4.477 10-10S17.522 2 11.999 2zm0 18a7.95 7.95 0 01-4.071-1.118l-.291-.173-3.018.883.849-3.1-.19-.309A7.977 7.977 0 014 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z" />
+            </svg>
+        </a>
+    </div>
+
+    <!-- =========================================================
+     NAVBAR JAVASCRIPT
+     ========================================================= -->
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const navMenuBtn = document.getElementById("navMenuBtn");
+            const navLinks = document.getElementById("navLinks");
+            const navDropdown = document.getElementById("navDropdown");
+            const dropdownToggle = document.querySelector(".nav-dropdown-toggle");
+
+            /* =========================================================
+               MOBILE MENU
+               ========================================================= */
+
+            if (navMenuBtn && navLinks) {
+                navMenuBtn.addEventListener("click", () => {
+                    const isOpen = navLinks.classList.toggle("open");
+
+                    navMenuBtn.classList.toggle("active", isOpen);
+                    navMenuBtn.setAttribute("aria-expanded", String(isOpen));
+                });
+            }
+
+            /* =========================================================
+               MOBILE ROOMS DROPDOWN
+               ========================================================= */
+
+            if (dropdownToggle && navDropdown) {
+                dropdownToggle.addEventListener("click", (event) => {
+                    if (window.innerWidth <= 900) {
+                        event.preventDefault();
+
+                        navDropdown.classList.toggle("open");
+                    }
+                });
+            }
+
+            /* =========================================================
+               CLOSE MENU AFTER CLICKING LINK
+               ========================================================= */
+
+            if (navLinks) {
+                navLinks.querySelectorAll("a").forEach((link) => {
+                    link.addEventListener("click", () => {
+                        if (
+                            window.innerWidth <= 900 &&
+                            link.classList.contains("nav-dropdown-toggle")
+                        ) {
+                            return;
+                        }
+
+                        navLinks.classList.remove("open");
+                        navMenuBtn?.classList.remove("active");
+                        navMenuBtn?.setAttribute("aria-expanded", "false");
+                        navDropdown?.classList.remove("open");
+                    });
+                });
+            }
+
+            /* =========================================================
+               CLOSE MENU WHEN CLICKING OUTSIDE
+               ========================================================= */
+
+            document.addEventListener("click", (event) => {
+                const clickedInsideNavbar = event.target.closest(".main-navbar");
+
+                if (!clickedInsideNavbar) {
+                    navLinks?.classList.remove("open");
+                    navMenuBtn?.classList.remove("active");
+                    navMenuBtn?.setAttribute("aria-expanded", "false");
+                    navDropdown?.classList.remove("open");
+                }
+            });
+
+            /* =========================================================
+               RESET NAVBAR AFTER RESIZE
+               ========================================================= */
+
+            window.addEventListener("resize", () => {
+                if (window.innerWidth > 900) {
+                    navLinks?.classList.remove("open");
+                    navMenuBtn?.classList.remove("active");
+                    navMenuBtn?.setAttribute("aria-expanded", "false");
+                    navDropdown?.classList.remove("open");
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
