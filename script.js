@@ -5,7 +5,7 @@
 function bookWhatsApp() {
   const phone = "918134838733";
 
-  const message = `Hello Kapsimotwa Gardens,
+  const message = `Hello Kapsimotwo Gardens,
 
 I would like to book a stay:
 
